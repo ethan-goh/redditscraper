@@ -37,7 +37,7 @@ class SaveToMySQLPipeline:
         self.cur.execute("""CREATE TABLE IF NOT EXISTS reddit_posts (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 title VARCHAR(255),
-                author TEXT,
+                author VARCHAR(255),
                 url TEXT,
                 score INT,
                 created_date DATETIME
