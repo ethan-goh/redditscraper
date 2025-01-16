@@ -13,7 +13,7 @@ class RedditSpider(scrapy.Spider):
 
         for post in top_posts:           
             post_item["title"] = post.title
-            post_item["author"] = post.author.name
+            post_item["author"] = post.author.name if post.author else "Unknown"
             post_item["url"] = post.url
             post_item["score"] = post.score
             post_item["created_date"] = post.created_utc
