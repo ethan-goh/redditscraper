@@ -13,10 +13,11 @@ load_dotenv()
 def db_connection():
     password = os.getenv("MY_SQL_PASSWORD")
     return mysql.connector.connect(
-        host = 'localhost',
-        user = 'root',
-        password = password,
-        database = 'posts'
+        host = os.getenv("DB_HOST"),
+        port = os.getenv("DB_PORT"),
+        user = os.getenv("DB_USER"),
+        password = os.getenv("DB_PASSWORD"),
+        database = os.getenv("DB_DATABASE")
     )
 
 def run_crawler():
