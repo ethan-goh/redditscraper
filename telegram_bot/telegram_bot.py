@@ -13,7 +13,7 @@ async def help_command(update, context):
 
 async def memes_command(update, context):
     await update.message.reply_text('''Preparing your memes......please wait.''')
-    file_name = export_to_csv('postsdata.csv')
+    file_name = export_to_csv('postsdata.html')
     chat_id = update.message.chat_id
     document = open(file_name, 'rb')
     with open(file_name, 'rb') as document:
