@@ -3,7 +3,7 @@ import os
 import mysql.connector
 import csv
 from redditscraper.spiders.redditspider import RedditSpider
-from scrapy.crawler import CrawlerProcess
+from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
 from threading import Thread
 
@@ -21,7 +21,7 @@ def db_connection():
     )
 
 def run_crawler():
-    process = CrawlerProcess(get_project_settings())
+    process = CrawlerRunner(get_project_settings())
     process.crawl(RedditSpider)
     process.start()
 
