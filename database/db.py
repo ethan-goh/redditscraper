@@ -6,6 +6,7 @@ from redditscraper.spiders.redditspider import RedditSpider
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
 from threading import Thread
+import subprocess
 
 
 load_dotenv()
@@ -21,15 +22,12 @@ def db_connection():
     )
 
 def run_crawler():
-    process = CrawlerRunner(get_project_settings())
-    process.crawl(RedditSpider)
-    process.start()
+    subprocess.run(['scrapy', 'crawl', 'redditspider'])
 
 
 def export_to_csv(file_name="postsdata.csv"):
-    thread = Thread(target=run_crawler)
-    thread.start()
-    thread.join()
+    run_crawler()
+    
     conn = db_connection()
     cursor = conn.cursor()
     query = "SELECT title, url, score, created_date FROM reddit_posts"
