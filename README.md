@@ -44,7 +44,7 @@ Since the bot is hosted on Heroku, there's no need to install or configure anyth
 - **Python**: Core programming language.
 - **Scrapy**: Web scraping framework to fetch Reddit data.
 - **PRAW**: Python Reddit API Wrapper.
-- **MySQL**: Database to store and track historical data.
+- **MySQL**: Database to store and track data.
 - **Heroku**: Hosting platform for the bot.
 - **JawsDB**: Add-on for MySQL database hosting.
 - **Python-Telegram-Bot**: For seamless integration with a telegram bot.
