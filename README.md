@@ -1,6 +1,6 @@
 # Reddit Memes Telegram Bot
 
-This is a Telegram bot that fetches the top 20 most upvoted memes from the r/memes subreddit over the past 24 hours. The bot generates a beautiful HTML report featuring meme images, titles, authors, scores, and timestamps and sends it to users upon request.
+This is a Telegram bot that fetches the top 20 most upvoted memes from the r/memes subreddit over the past 24 hours. The bot generates a HTML report featuring the aforementioned memes and sends it to users upon request.
 
 ---
 
