@@ -15,7 +15,7 @@ This is a Telegram bot that fetches the top 20 most upvoted memes from the r/mem
 ## How to Use
 
 ### Start the Bot
-1. Open Telegram and search for the bot by its username (provided by the developer).
+1. Open Telegram and search for the bot by its username.
 2. Click **Start** or type `/start` to begin interacting with the bot.
 
 ### Commands
