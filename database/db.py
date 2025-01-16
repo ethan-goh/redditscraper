@@ -2,17 +2,12 @@ from dotenv import load_dotenv
 import os
 import mysql.connector
 import csv
-from redditscraper.spiders.redditspider import RedditSpider
-from scrapy.crawler import CrawlerRunner
-from scrapy.utils.project import get_project_settings
-from threading import Thread
 import subprocess
 
 
 load_dotenv()
 
 def db_connection():
-    password = os.getenv("MY_SQL_PASSWORD")
     return mysql.connector.connect(
         host = os.getenv("DB_HOST"),
         port = os.getenv("DB_PORT"),
@@ -27,7 +22,7 @@ def run_crawler():
 
 def export_to_csv(file_name="postsdata.csv"):
     run_crawler()
-    
+
     conn = db_connection()
     cursor = conn.cursor()
     query = "SELECT title, url, score, created_date FROM reddit_posts"

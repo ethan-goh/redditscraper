@@ -1,7 +1,6 @@
 from database.db import export_to_csv
 from dotenv import load_dotenv
-from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes, filters, MessageHandler
+from telegram.ext import Application, CommandHandler, filters, MessageHandler
 import os
 
 load_dotenv()
