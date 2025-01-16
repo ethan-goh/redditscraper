@@ -37,6 +37,7 @@ class SaveToMySQLPipeline:
         self.cur.execute("""CREATE TABLE IF NOT EXISTS reddit_posts (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 title VARCHAR(255),
+                author TEXT,
                 url TEXT,
                 score INT,
                 created_date DATETIME
@@ -45,11 +46,12 @@ class SaveToMySQLPipeline:
 
     def process_item(self, item, spider):
         myquery = """INSERT INTO reddit_posts
-        (title, url, score, created_date)
-        values(%s, %s, %s, %s)
+        (title, author, url, score, created_date)
+        values(%s, %s, %s, %s, %s)
         """
         val = (
             item.get('title'),
+            item.get('author'),
             item.get('url'),
             item.get('score'),
             item.get('created_date')

@@ -14,6 +14,7 @@ class RedditscraperItem(scrapy.Item):
 
 class PostItem(scrapy.Item):
     title = scrapy.Field()
+    author = scrapy.Field()
     url = scrapy.Field()
     score = scrapy.Field()
     created_date = scrapy.Field()
